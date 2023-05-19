@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Container from './Components/Container/Container';
+import AccountDetail from './Components/AccountDetail/AccountDetail';
+import AccountContext from './Components/AccountContext/AccountContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="appContainer">
+      <header className="header">
+        <h2>NCR</h2>
       </header>
+      <AccountContext>
+        <Routes>
+          <Route path='/' element={<Container/>}></Route>
+          <Route path='/account/:number/:curr' element={<AccountDetail/>}></Route>
+        </Routes>
+      </AccountContext>
     </div>
   );
 }
