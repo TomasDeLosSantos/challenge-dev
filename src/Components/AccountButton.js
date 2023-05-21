@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 const AccountButton = ({type, number, currency}) => {
     return(
         <Link to={`/account/${number}/${currency}`}>

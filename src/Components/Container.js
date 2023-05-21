@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './AccountButton'
 import AccountButton from './AccountButton';
 import { Context } from './AccountContext';
@@ -16,24 +16,26 @@ const Container = () => {
                     :
                     context.accounts.length > 0 ?
                         <article>
-                            <h2>Seleccione la Cuenta a Consultar</h2>
+                            <h2 className='mainTitle'>Seleccione la Cuenta a Consultar</h2>
                             <div className='buttonContainer'>
                                 {pageIndex > 0 ? 
                                     <button className='pageButton' onClick={() => setPageIndex(pageIndex - 1)}>
                                         {"<<"} Opciones Anteriores
-                                    </button> : <></>}
+                                    </button> 
+                                : <></>}
+
                                 {context.accountsPerPage[pageIndex]?.map(a => <AccountButton key={a.n + a.moneda} type={a.tipo_letras} number={a.n} currency={a.moneda}/>)}
+
                                 {pageIndex + 1 < context.pages ? 
                                     <button className='pageButton' onClick={() => setPageIndex(pageIndex + 1)}>
                                         Más Opciones {">>"}
-                                    </button> : <></>}
+                                    </button> 
+                                : <></>}
                             </div>
                         </article>
                     :
                         <h2 className='mainTitle'>No se encontraron cuentas</h2>
                 }
-            
-
             {context.pages !== 0 ? <h4>{pageIndex + 1}/{context.pages}</h4> : <h4></h4>}
         </section>
     )
