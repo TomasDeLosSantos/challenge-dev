@@ -1,19 +1,35 @@
 # Instrucciones
-Para poner en funcionamiento el projecto, debe seguir los siguientes pasos:
 
-## Crear archivo .env
-En el directorio raíz del proyecto, se debe crear un archivo con nombre ".env" en el que guardaremos la url de la API que nos brinda la información de las cuentas a mostrar en la aplicación. Dentro del archivo deberá definirse la siguiente variable:
-### REACT_APP_API_URL='url correspondiente a la api'
-Guardamos los cambios en el archivo y luego corremos los siguientes comandos desde la consola:
+Para poner en funcionamiento el proyecto, debe seguir los siguiente pasos:
 
-### `npm i` o `npm install`
-Instala las dependencias necesarias.
+## 1. Crear archivo `.env`
 
-Luego, está la opción de iniciar la aplicación o pasar las pruebas unitarias de la misma:
+En el directorio raíz del proyecto, creá un archivo llamado `.env` donde guardarás la URL de la API que proporciona la información de las cuentas a mostrar en la aplicación. Dentro del archivo, debes definir la siguiente variable:
+
+### `REACT_APP_API_URL='URL correspondiente a la API'`
+
+Guardá los cambios en el archivo.
+
+## 2. Instalar dependencias
+
+Desde tu consola, ejecutá el siguiente comando:
+
+### `npm install`
+
+Esto instalará las dependencias necesarias.
+
+## 3. Iniciar la aplicación
+
+Ejecutá el siguiente comando en la consola:
 
 ### `npm start`
-Da marcha a la aplicación.
-Abrir [http://localhost:3000](http://localhost:3000) para poder verlo en el navegador.
+
+Esto iniciará la aplicación. Abrí [http://localhost:3000](http://localhost:3000) en tu navegador para verla.
+
+## 4. Ejecutar las pruebas unitarias (opcional)
+
+Si deseas ejecutar las pruebas unitarias de la aplicación, utiliza el siguiente comando en la consola:
 
 ### `npm test`
-Corre las pruebas del banco de test diseñado para la aplicación.
+
+Esto ejecutará el conjunto de pruebas diseñado para la aplicación.
