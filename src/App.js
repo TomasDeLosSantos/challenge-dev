@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Container from './Components/Container/Container';
-import AccountDetail from './Components/AccountDetail/AccountDetail';
-import AccountContext from './Components/AccountContext/AccountContext';
-
+import Container from './Components/Container';
+import AccountDetail from './Components/AccountDetail';
+import AccountContext from './Components/AccountContext';
 
 function App() {
   return (

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 export const Context = React.createContext([]);
 
 const AccountContext = ({ defaultValue = [], children }) => {
     const [accounts, setAccounts] = useState(defaultValue);
     const [accountsPerPage, setAccountsPerPage] = useState(defaultValue);
     const [pages, setPages] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getData = async () => {
@@ -40,6 +40,7 @@ const AccountContext = ({ defaultValue = [], children }) => {
                         setPages(i);
                     }
                 }
+                setLoading(false);
             } catch (error) {
                 console.error(error);
             }
@@ -48,7 +49,7 @@ const AccountContext = ({ defaultValue = [], children }) => {
     }, []);
 
     return(
-        <Context.Provider value={ {accounts, accountsPerPage, pages} }>
+        <Context.Provider value={ {accounts, accountsPerPage, pages, loading} }>
             {children}
         </Context.Provider>
     );
