@@ -14,7 +14,7 @@ const AccountContext = ({ defaultValue = [], children }) => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const fetchData = await fetch('https://api.npoint.io/97d89162575a9d816661');
+                const fetchData = await fetch(process.env.REACT_APP_API_URL);
                 const data = await fetchData.json();
                 /*
                 Filtro las cuentas tal que:
